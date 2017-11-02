@@ -41,3 +41,23 @@ cacheSolve <- function(x, ...) {
     x$setInversed(inversed_matrix)
     inversed_matrix
 }
+
+## Example:
+##
+## > mc <- makeCacheMatrix(matrix(c(1,0,1,1,1,0,1,1,1),nrow = 3,ncol = 3))
+## > mc$get()
+## [,1] [,2] [,3]
+## [1,]    1    1    1
+## [2,]    0    1    1
+## [3,]    1    0    1
+## > cacheSolve(mc)
+## [,1] [,2] [,3]
+## [1,]    1   -1    0
+## [2,]    1    0   -1
+## [3,]   -1    1    1
+## > cacheSolve(mc)
+## getting cached inversed matrix
+## [,1] [,2] [,3]
+## [1,]    1   -1    0
+## [2,]    1    0   -1
+## [3,]   -1    1    1
